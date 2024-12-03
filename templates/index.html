@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MLB Simulation</title>
+</head>
+<body>
+    <h1>MLB Simulation</h1>
+    <button onclick="playGame()">Play Game</button>
+    <pre id="results"></pre>
+
+    <script>
+        async function playGame() {
+            const response = await fetch('/play_game');
+            const data = await response.json();
+            document.getElementById('results').textContent = JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>
